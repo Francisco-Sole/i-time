@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" style="margin: 0 ;background-color: #4591C6">
+<head>
+	<meta charset="UTF-8">	
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="js/framework/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/framework/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<title>I-time</title>
+</head>
+<body>
+	<div id="sombra" style="width: 100%; height: 100%;background-color: rgba(0, 2, 0, 0.2); position: fixed;top: 0px; left: 0px;display: none"></div>
+	<h1 style="font-family: titulo; padding:15px; float: left; width: calc(75% - 30px);font-size: 62px;"><img height="60px" src="media/img/impackta.svg" style="position: relative;margin-top: -30px;top: 0px;left: -10px;z-index: -1;margin-right: 80px;">I-time</h1>
+	<div style="float:left;font-family:titulo;padding:15px;width:calc(25% - 30px);font-weight:900;height:90px;height:87px;margin-top:72px;">
+		<div id="nombreUser" style="float: left;color:white;margin-bottom: 10px;"></div>
+		<div id="divBoton" onclick='enviarDatos()' style="float: left;width: 250px; padding: 20px; cursor: pointer; color: white; font-weight: 900;background-color: #0C69EA; text-align: center;">
+			Enviar
+		</div>		
+	</div>
+
+
+	<div id='divLogin' style="margin-left: 15px;position: fixed;margin-left: calc( 50% - 220px ); background-color: #4591C6; padding: 60px;">
+		<form id="formLogin" action="php/valida_user.php" method="POST">
+			<p style="font-family: cuerpo; width: 100%; font-size: 20pt; margin-top: -5px;">Login</p>
+			<input type="text" name="user" id="user" placeholder="Nombre usuario">
+			<input type="password" name="passwd" id="passwd" placeholder="Password" onkeypress="miraTeclas(event)">
+			<input type="button" name="btnSubmit" id="btnSubmit" value="Validar" onclick="doLogin()">			
+		</form>
+	</div>
+	<div id="departamentos" style="float: left;width: 15%;margin-left: 20px;">
+
+	</div>
+	<div id="familias" style="float: left;width: 15%;">
+
+	</div>
+	<div id="subfamilias" style="float: left;width: 15%;">
+
+	</div>
+	<div id="subfamilias1" style="float: left;width: 15%;">
+
+	</div>
+	<div id="subfamilias2" style="float: left;width: 15%;">
+
+	</div>
+	<div id="confirmacion" style="float: left;width: 15%;margin-top: 51px;margin-left: 20px;">
+		<div style="float: left;width: 100%;">
+			<select tipo="produccion" id="selectHorasProduccion0" style="padding: 10px;font-weight: 900;width: 130px;margin-bottom: 15px;text-align: center;">
+				<option id="0">0</option>
+				<option id="1">1</option>
+				<option id="2">2</option>
+				<option id="3">3</option>
+				<option id="4">4</option>
+				<option id="5">5</option>
+				<option id="6">6</option>
+				<option id="7">7</option>
+				<option id="8">8</option>
+			</select>
+			<span style="margin-left: 3px; margin-right: 3px;"> : </span>
+			<select tipo="produccion"  id="selectMinutosProduccion0" style='padding: 10px;font-weight: 900;width: 130px; text-align: center;'>
+				<option id="0">00</option>
+				<option id="1">30</option>
+			</select>
+		</div>
+		
+		<div style="float: left;width:calc(100% - 30px);background-color: #0C69EA;padding: 15px;font-weight: 900;color: white;text-align: center;" onclick="previsualizacion()">OK</div>
+	</div>
+	<div id="descripcion" style="float: left;width: calc(100% - 70px);font-weight: 900; padding: 10px;color:white">
+		
+	</div>
+	<div id="exclamacion" style="float: left;display: none;"><img height="60px;" style="margin-top:25px;" src="media/img/advertencia.png"></div>
+	<div id="totalHoras" style="float: left;width: calc(100% - 180px);font-weight: 900; padding: 50px;color: white;margin-left:11px;">
+		Total horas: <span id='horasTotal'> 0:00</span>
+	</div>
+	
+</body>
+</html>
